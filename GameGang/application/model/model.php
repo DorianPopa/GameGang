@@ -99,7 +99,7 @@ class Model {
   }
 
   public function getFirstThreeGames($game_id) {
-    $sql = "SELECT id, title, developer FROM games WHERE id >= :game_id LIMIT 3";
+    $sql = "SELECT id, title, description, developer FROM games WHERE id >= :game_id LIMIT 3";
     $query = $this->db->prepare($sql);
     $parameters = array(':game_id' => $game_id);
     $query->execute($parameters);
@@ -199,8 +199,27 @@ class Model {
     return $query->fetchAll();
   }
 
+  public function getMostPopularGames() {
+    $sql = "SELECT game_id, duration FROM (SELECT game_id, SUM(duration) AS duration FROM game_sessions GROUP BY game_id ORDER BY 2 DESC) AS T LIMIT 3";
+    $query = $this->db->prepare($sql);
+
+    $query->execute();
+
+    return $query->fetchAll();
+  }
+
   public function getSessions($user_id) {
-    $sql = "SELECT title, s.description, duration FROM games g JOIN game_sessions s ON g.id = s.game_id WHERE s.user_id = :user_id";
+    $sql = "SELECT title, s.description as description, duration FROM games g JOIN game_sessions s ON g.id = s.game_id WHERE s.user_id = :user_id ORDER BY created_at DESC";
+    $query = $this->db->prepare($sql);
+    $parameters = array(':user_id' => $user_id);
+
+    $query->execute($parameters);
+
+    return $query->fetchAll();
+  }
+
+  public function getRecentSessions($user_id) {
+    $sql = "SELECT title, s.description as description, duration FROM games g JOIN game_sessions s ON g.id = s.game_id WHERE s.user_id = :user_id ORDER BY created_at DESC LIMIT 3";
     $query = $this->db->prepare($sql);
     $parameters = array(':user_id' => $user_id);
 
@@ -217,6 +236,24 @@ class Model {
     $query->execute($parameters);
 
     return $query->fetch()->id;
+  }
+
+  public function getMostPlayed($game_id) {
+    $sql = "SELECT user_id, duration FROM (SELECT user_id, SUM(duration) AS duration FROM game_sessions WHERE game_id = :game_id GROUP BY user_id ORDER BY 2 DESC) AS T LIMIT 3";
+    $query = $this->db->prepare($sql);
+    $parameters = array(':game_id' => $game_id);
+
+    $query->execute($parameters);
+
+    return $query->fetchAll();
+  }
+
+  public function addSession($user_id, $game_id, $description, $duration) {
+    $sql = "INSERT INTO game_sessions(user_id, game_id, description, duration) VALUES (:user_id, :game_id, :description, :duration)";
+    $query = $this->db->prepare($sql);
+    $parameters = array(':user_id' => $user_id, ':game_id' => $game_id, ':description' => $description, ':duration' => $duration);
+
+    $query->execute($parameters);
   }
 
 

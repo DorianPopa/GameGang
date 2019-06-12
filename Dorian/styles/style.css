@@ -184,6 +184,16 @@ nav li .dropbtn {
     font-size: 75%;
 }
 
+.textOverImageBackgroundCover{
+    position: absolute;
+    top: 600px;
+    left: calc(100% / 4);
+    width: 700px;
+    height: 100px;
+    background-color: black;
+    opacity: 0.6;
+}
+
 .latestReleases{
     display: flex;
     flex-direction: column;

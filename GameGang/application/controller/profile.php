@@ -7,6 +7,7 @@ class Profile extends Controller {
       if($this->model->getUser($user_id)) {
           $user = $this->model->getUser($user_id);
           $favorite_games = $this->model->getFavoriteGames($user_id);
+          $recent_sessions = $this->model->getRecentSessions($user_id);
 
           require APP . 'view/_templates/header.php';
           require APP . 'view/profile/user.php';
@@ -26,6 +27,7 @@ class Profile extends Controller {
       $game_id = $id;
       if($this->model->getGame($game_id)) {
           $game = $this->model->getGame($game_id);
+          $mostplayed = $this->model->getMostPlayed($game_id);
 
           require APP . 'view/_templates/header.php';
           require APP . 'view/profile/game.php';
@@ -64,11 +66,12 @@ class Profile extends Controller {
       if(isset($_POST['submit_add_session'])) {
         $game_id = $this->model->getGameIdByTitle($_POST['title']);
         if($game_id) {
-
+          $this->model->addSession($_POST['user_id'], $game_id, $_POST['description'], $_POST['duration']);
         }
 
       }
     }
+    header('location: '. URL .'profile/sessions/'.$this->isLoggedIn());
   }
 
   public function setFavorite($game_id = null) {
