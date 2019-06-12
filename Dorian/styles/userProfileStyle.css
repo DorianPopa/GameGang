@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+    background: black;
+    font: 1.2em / 1.2 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+a:link {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: rgb(39, 218, 218);
+}
+
+.mainContainerGrid{
+    display: grid;
+}
+
+.topContainer{
+    padding-top: 25px;
+    padding-bottom: 35px;
+    padding-left: 0%;
+    padding-right: 0%;
+    display: grid;
+    grid-row-gap: 50px;
+    background: white;
+}
+
+.title{
+    padding-left: 25%;
+    padding-right: 25%;
+    grid-column: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.title h1{
+    font-size: 1.5em;
+    color: black;
+}
+
+.logoImage{
+    max-height: 75px;
+    width: auto;
+}
+
+nav {
+    top: 0;
+    position: sticky;
+    background-color: white;
+    margin: 0;
+    max-width: 100%;
+    z-index: 50;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+    padding: 0 15px 0 15px;
+}
+
+nav li a {
+    color: black;
+    text-decoration: none;
+}
+
+nav li .dropbtn {
+    background-color: white;
+    color: black;
+    border: none;
+    font: 1.2em / 1.2 'Montserrat', sans-serif;
+    padding: 0.5em 0.25em 0.5em 0.25em;
+    cursor: pointer;
+    outline: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 300px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+    padding-top: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: white;
+    color: rgb(39, 218, 218);
+}
+
+.bgContainer {
+    overflow: hidden;
+}
+
+.bgContainer img {
+    width:100%;
+    margin-bottom: -35%;
+    opacity: 0.5;
+}
+
+.profileContainer {
+    overflow: hidden;
+    background-color: white;
+}
+
+.profileContainer .profilePicture {
+    position:absolute;
+    top:55%;
+    left:20%;
+    width:10%;
+    border:2px solid white;
+}
+
+.profileContainer h2 {
+    padding:auto;
+    margin-top:75px;
+    margin-left:31%;
+}
+
+.profileContainer h3 {
+    padding:auto;
+    float:right;
+    margin-right:10%;
+}
+
+.profileContainer ul.badgesContainer {
+    margin: 25px 75px 0 0;
+    padding: 0;
+    border: 2px solid black;
+    border-radius: 25px;
+    display: flex;
+    float:right;
+    overflow: hidden;
+}
+
+.profileContainer ul.badgesContainer li {
+    list-style-type: none;
+}
+
+.profileContainer ul.badgesContainer li img {
+    width:105px;
+}
+
+.profileContainer h2.favgamestitle{
+    margin-left:20%;
+}
+
+.profileContainer ul.favGamesList {
+    margin-left: 15%;
+    margin-bottom: 50px;
+}
+
+.profileContainer ul.favGamesList li{
+    display: grid;
+    grid-template-columns: 5% 15%;
+    list-style-type: none;
+    margin-bottom: 15px;
+}
+
+
+.profileContainer ul.favGamesList img {
+    grid-row: 1/3;
+    width:100%;
+}
+
+.profileContainer ul.favGamesList h3 {
+    margin: 10px 0 0 0;
+    grid-column: 2/4;
+    grid-row: 1;
+}
+
+.profileContainer ul.favGamesList h5 {
+    margin:0;
+    grid-column: 2/4;
+    grid-row: 2;
+}
+
+
+.groupsArea{
+    padding: 25px 25% 15% 25%;
+    color: white;
+}
+
+.groupName{
+    padding-bottom: 10px;
+    padding-left: 5%;
+}

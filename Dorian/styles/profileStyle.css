@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+    background: rgba(0, 0, 0, 0.95);
+    font: 1.2em / 1.2 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+a:link {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: rgb(39, 218, 218);
+}
+
+.mainContainerGrid{
+    display: grid;
+}
+
+.topContainer{
+    padding-top: 25px;
+    padding-bottom: 35px;
+    padding-left: 0%;
+    padding-right: 0%;
+    display: grid;
+    grid-row-gap: 50px;
+    background: white;
+}
+
+.title{
+    padding-left: 25%;
+    padding-right: 25%;
+    grid-column: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.title h1{
+    font-size: 1.5em;
+    color: black;
+}
+
+.logoImage{
+    max-height: 75px;
+    width: auto;
+}
+
+nav {
+    top: 0;
+    position: sticky;
+    background-color: white;
+    margin: 0;
+    max-width: 100%;
+    z-index: 50;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+    padding: 0 25px 0 25px;
+}
+
+nav li a {
+    color: black;
+    text-decoration: none;
+}
+
+nav li .dropbtn {
+    background-color: white;
+    color: black;
+    border: none;
+    font-size: 1em;
+    font: 1.2em / 1.2 'Montserrat', sans-serif;
+    padding: 0.5em 0.25em 0.5em 0.25em;
+    cursor: pointer;
+    outline: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 300px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+    padding-top: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: black;
+    background-color: white;
+    color: rgb(39, 218, 218);
+}
+
+.bigImageContainer{
+    overflow: hidden;
+}
+
+.theBigImage{
+    width: 100%;
+    opacity: 0.5;
+    margin-bottom: -25%;
+}
+
+.textOverImageBackground{
+    position: absolute;
+    top: 600px;
+    left: calc(100% / 4);
+    width: 700px;
+    height: 100px;
+    background-color: black;
+    opacity: 0.6;
+}
+
+.textOverImageBackground .textInside{
+    color: white;
+    opacity: 1;
+    padding-top: 0%;
+    padding-bottom: 10%;
+    padding-left: 5%;
+    padding-right: 10%;
+    font-size: 1em;
+}
+
+.thumbnailsContainer{
+    padding-left: 25%;
+    padding-right: 25%;
+    color: black;
+    background: white;
+}
+
+.imageContainer{
+    overflow: hidden;
+}
+
+.imageList ul{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+    padding: 10px 0 0 0;
+}
+
+.imageList ul li{
+    padding: 10px;
+}
+
+.imageList ul li img{
+    max-width: 100%;
+    height: auto;
+    object-fit: fill;
+}
+
+.descriptionAndReviews{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+    padding: 30px 25% 0 25%;
+    background: white;
+
+}
+
+.descriptionContainer{
+    width:45%;
+    padding-right: 5%;
+}
+
+.reviewArea{
+    width:45%;
+    display: flex;
+    flex-direction: column;
+    column-gap: 5%;
+}
+
+.reviewContainer .firstRow{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.reviewContainer .secondRow{
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-bottom: 7%;
+}
+
+.groupsArea{
+    padding: 30px 25% 15% 25%;
+    color: white;
+}
+
+.groupName{
+    padding-bottom: 10px;
+    padding-left: 5%;
+}

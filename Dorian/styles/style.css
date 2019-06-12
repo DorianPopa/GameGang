@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+    background: rgba(0, 0, 0, 0.95);
+    font: 1.2em / 1.2 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+a:link {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: rgb(39, 218, 218);
+}
+
+.mainContainerGrid{
+    display: grid;
+}
+
+.topContainer{
+    padding-top: 25px;
+    padding-bottom: 35px;
+    padding-left: 0%;
+    padding-right: 0%;
+    display: grid;
+    grid-row-gap: 50px;
+    background: white;
+}
+
+.title{
+    padding-left: 25%;
+    padding-right: 25%;
+    grid-column: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.title h1{
+    font-size: 1.5em;
+    color: black;
+}
+
+.logoImage{
+    max-height: 75px;
+    width: auto;
+}
+
+nav {
+    top: 0;
+    position: sticky;
+    background-color: white;
+    margin: 0;
+    max-width: 100%;
+    z-index: 50;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+    padding: 0 25px 0 25px;
+}
+
+nav li a {
+    color: black;
+    text-decoration: none;
+}
+
+nav li .dropbtn {
+    background-color: white;
+    color: black;
+    border: none;
+    font-size: 1em;
+    font: 1.2em / 1.2 'Montserrat', sans-serif;
+    padding: 0.5em 0.25em 0.5em 0.25em;
+    cursor: pointer;
+    outline: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 300px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+    padding-top: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: black;
+    background-color: white;
+    color: rgb(39, 218, 218);
+}
+
+.middleContainer{
+    overflow: hidden;
+}
+
+.theBigImage{
+    width: 100%;
+    opacity: 0.5;
+    margin-bottom: -15%;
+}
+
+.textOverImageBackground{
+    position: absolute;
+    top: 400px;
+    left: calc(100% / 4);
+    width: 600px;
+    height: 300px;
+    background-color: black;
+    opacity: 0.6;
+}
+
+.textOverImageBackground .textInside{
+    color: white;
+    opacity: 1;
+    padding-top: 2%;
+    padding-bottom: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 1em;
+}
+
+.bottomContainer{
+    padding-left: 25%;
+    padding-right: 25%;
+    color: white;
+}
+
+.mostPopular{
+    padding-top: 10%;
+    padding-bottom: 15%;
+}
+
+.titleList ul{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+    padding: 50px 0 0 0;
+}
+
+.titleList ul li{
+    padding: 15px;
+}
+
+.titleList ul li img{
+    max-width: 100%;
+    height: auto;
+}
+
+.titleList ul li h3{
+    margin-bottom: 0.5em;
+}
+
+.playerCount{
+    color: white;
+    opacity: 0.7;
+    font-size: 75%;
+}
+
+.latestReleases{
+    display: flex;
+    flex-direction: column;
+}
+
+.triviaContainer{
+    overflow: hidden;
+}
+
+.triviaContainer .theBigImage{
+    width: 100%;
+    opacity: 0.5;
+    margin-bottom: -5%;
+}
+
+.textOverTriviaImageBackground{
+    position: absolute;
+    top: 2080px;
+    left: calc(100% / 4);
+    width: 50%;
+    height: 80%;
+    background-color: black;
+    opacity: 0.7;
+    text-align: center;
+}
+
+.textOverTriviaImageBackground .textInside{
+    color: white;
+    opacity: 1;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-size: 1em;
+}
+
+.textOverTriviaImageBackground .textInside h1{
+    text-align: center;
+}
+
+.usersAnsweredTrivia{
+    padding-top: 15px;
+    color: white;
+    font-size: 0.7em;
+}
+
+.submitAnswerButton{
+    background-color: rgb(39, 218, 218);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.1em;
+    border-radius: 5px;
+    z-index: 50;
+}
+
+.textOverTriviaImageBackground label{
+    color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.textOverTriviaImageBackground input{
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 5%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 1.3em;
+    text-align: center;
+    border-radius: 10px;
+}
