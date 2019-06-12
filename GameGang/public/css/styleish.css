@@ -257,14 +257,14 @@ body {
     display:grid;
 }
 
-.editContainer label{
+label{
     color: white;
 
     margin:auto;
 }
 
-.editContainer input{
-    margin-bottom: 5%;
+input{
+    margin: 0 auto 5% auto;
     padding-bottom: 20px;
     padding-top: 20px;
     font-size: 1.3em;
@@ -379,6 +379,26 @@ a:link {
     padding-left: 5%;
     padding-right: 10%;
     font-size: 0.8em;
+}
+
+.gameData {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin:0 25% 0 25%;
+}
+
+.gameData .description{
+  width: 50%;
+}
+
+.gameData .mostPlayed{
+  width: 40%;
+  margin-left: 10%;
+}
+
+.favoritebutton {
+  float: right;
 }
 
 a:visited {
