@@ -441,6 +441,58 @@ a:link {
     grid-row: 3;
 }
 
+.sessionContainer  {
+    padding-top: 100px;
+    padding-left: 20%;
+    padding-right: 20%;
+    display: grid;
+}
+
+.sessionContainer .addSessionField {
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.sessionContainer .addSessionField h3 {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    margin-bottom: 100px;
+}
+
+.sessionContainer .addSessionField form {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.sessionContainer .addSessionField form .inputField {
+    grid-column: 1 / span 2;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 20px;
+}
+
+.sessionContainer .addSessionField form .submitButton {
+    grid-column: 1 / span 2;
+    width: 200px;
+}
+
+
+.sessionContainer .mySessionsTable {
+    grid-row: 2;
+}
+
+.sessionContainer .mySessionsTable thead {
+    background-color: #FFFFFF; 
+    font-weight: bold; 
+    color: #000000;
+}
+
+.sessionContainer .mySessionsTable thead tr td{
+}
+
 a:visited {
     text-decoration: none;
     color: white;
