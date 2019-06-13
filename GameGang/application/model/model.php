@@ -209,7 +209,7 @@ class Model {
   }
 
   public function getSessions($user_id) {
-    $sql = "SELECT title, s.description as description, duration FROM games g JOIN game_sessions s ON g.id = s.game_id WHERE s.user_id = :user_id ORDER BY created_at DESC";
+    $sql = "SELECT title, s.description as description, duration, created_at FROM games g JOIN game_sessions s ON g.id = s.game_id WHERE s.user_id = :user_id ORDER BY created_at DESC";
     $query = $this->db->prepare($sql);
     $parameters = array(':user_id' => $user_id);
 
@@ -256,7 +256,40 @@ class Model {
     $query->execute($parameters);
   }
 
+  public function addGroup($groupname, $game_id) {
+    $sql = "INSERT INTO groups(name, game_id) VALUES(:groupname, :game_id)";
+    $query = $this->db->prepare($sql);
+    $parameters = array(':groupname' => $groupname, ':game_id' => $game_id);
 
+    $query->execute($parameters);
+  }
+
+  public function getGroups() {
+    $sql = "SELECT id, name, game_id FROM groups";
+    $query = $this->db->prepare($sql);
+
+    $query->execute();
+
+    return $query->fetchAll();
+  }
+
+  public function joinGroup($group_id, $user_id) {
+    $sql = "INSERT INTO group_has_users(group_id, user_id) VALUES(:group_id, :user_id)";
+    $query = $this->db->prepare($sql);
+    $parameters = array(':group_id' => $group_id, ':user_id' => $user_id);
+
+    $query->execute($parameters);
+  }
+
+  public function getGroupMemberCount($group_id) {
+    $sql = "SELECT count(id) AS count FROM group_has_users WHERE group_id = :group_id";
+    $query = $this->db->prepare($sql);
+    $parameters = array(':group_id' => $group_id);
+
+    $query->execute($parameters);
+
+    return $query->fetch()->count;
+  }
 
 
 

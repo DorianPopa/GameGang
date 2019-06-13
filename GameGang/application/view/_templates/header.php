@@ -27,7 +27,7 @@
         <li><a href="<?php echo URL; ?>songs">songs</a></li>
         <li><a href="<?php echo URL; ?>games/view">Games</a></li>
 
-
+        <?php if($this->isLoggedIn()) { ?> <li><a href="<?php echo URL; ?>groups">Groups</a></li> <?php } ?>
         <?php if($this->isLoggedIn()) { ?><li><a href="<?php echo URL; ?>login/logout">Logout</a></li>
         <?php } else {?> <li><a href="<?php echo URL; ?>login">Login</a></li> <?php } ?>
 

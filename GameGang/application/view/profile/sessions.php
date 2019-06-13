@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="sessionContainer">
+
     <?php if($this->isLoggedIn()) { ?>
       <div class="addSessionField">
           <h3>Add a new game session</h3>
@@ -17,7 +17,8 @@
       <table>
           <thead>
             <tr>
-                <td>Title</td>
+                <td>Registered At</td>
+                <td>Game</td>
                 <td>Description</td>
                 <td>Duration</td>
             </tr>
@@ -25,6 +26,7 @@
           <tbody>
           <?php foreach ($sessions as $session) { ?>
               <tr>
+                  <td><?php if (isset($session->created_at)) echo htmlspecialchars($session->created_at, ENT_QUOTES, 'UTF-8'); ?></td>
                   <td><?php if (isset($session->title)) echo htmlspecialchars($session->title, ENT_QUOTES, 'UTF-8'); ?></td>
                   <td><?php if (isset($session->description)) echo htmlspecialchars($session->description, ENT_QUOTES, 'UTF-8'); ?></td>
                   <td><?php if (isset($session->duration)) echo htmlspecialchars($session->duration, ENT_QUOTES, 'UTF-8'); ?></td>
@@ -33,5 +35,5 @@
           </tbody>
       </table>
     </div>
-  </div>
+
 </div>
