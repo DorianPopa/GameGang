@@ -401,6 +401,46 @@ a:link {
   float: right;
 }
 
+.loginContainer {
+    padding-top: 100px;
+    padding-left: 35%;
+    padding-right: 35%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.loginContainer h3 {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    margin-bottom: 100px;
+}
+
+.loginContainer .box{
+    grid-row: 2;
+    grid-column: 1 / span 2;
+}
+
+.loginContainer .box form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.loginContainer .box form .inputField {
+    grid-column: 1 / span 2;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+}
+
+.loginContainer .box form .submitButton {
+    grid-column: 1 / span 2;
+    width: 200px;
+}
+
+.loginContainer a {
+    grid-row: 3;
+}
+
 a:visited {
     text-decoration: none;
     color: white;
