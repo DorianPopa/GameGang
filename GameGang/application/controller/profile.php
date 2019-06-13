@@ -87,4 +87,16 @@ class Profile extends Controller {
     header('location: ' . URL . 'profile/game/' . $game_id);
   }
 
+  public function group($id = null) {
+    if(isset($id)){
+      $group = $this->model->getGroup($id);
+      $members = $this->model->getGroupMembers($id);
+      $sessions = $this->model->getGroupSessions($id);
+  
+      require APP . 'view/_templates/header.php';
+      require APP . 'view/profile/group.php';
+      require APP . 'view/_templates/footer.php';
+    }
+  }
 }
+

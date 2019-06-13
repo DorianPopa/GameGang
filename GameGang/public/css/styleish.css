@@ -492,8 +492,7 @@ a:link {
 .mySessionsTable thead {
     background-color: #FFFFFF; 
     font-weight: bold; 
-    color: #000000;
-    
+    color: #000000; 
 }
 
 .mySessionsTable table{
@@ -505,6 +504,80 @@ a:link {
     background-color: black;
     color: white;
 }
+
+.addnewgroup {
+    padding-top: 100px;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.addnewgroup h2{
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    margin-bottom: 75px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.addnewgroup form {
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.addnewgroup form .inputField {
+    grid-column: 1 / span 2;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 20px;
+}
+
+.addnewgroup .submitButton {
+    grid-column: 1 / span 2;
+    width: 250px;
+}
+
+.existinggroups {
+    padding-top: 50px;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 150px;
+    background: white;
+    color: black;
+    text-align: center
+}
+
+.existinggroups table {
+    text-align: center;
+    margin:auto;
+}
+
+.existinggroups thead {
+    background-color: black; 
+    font-weight: bold; 
+    color: white; 
+}
+
+.existinggroups table tbody tr td form .submitButton {
+    font-size: 1em;
+    margin: auto auto 5% auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.existinggroups table tbody tr td a {
+    color: black;
+}
+
+.existinggroups table tbody tr td a:hover {
+    color: rgb(39, 218, 218);
+}
+
 
 a:visited {
     text-decoration: none;

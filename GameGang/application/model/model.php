@@ -291,13 +291,47 @@ class Model {
     return $query->fetch()->count;
   }
 
+  public function getGroupSessions($group_id) {
+    $sql = "SELECT gs.id AS session_id, gs.user_id AS user_id FROM groups g
+            JOIN group_has_users ghu ON g.id = ghu.group_id
+            JOIN game_sessions gs ON ghu.user_id = gs.user_id AND g.game_id = gs.game_id
+            WHERE g.id = :group_id ORDER BY created_at DESC";
+    $query = $this->db->prepare($sql);
+    $parameters = array(':group_id' => $group_id);
+    $query->execute($parameters);
 
+    return $query->fetchAll();
+  }
 
+  public function getSession($session_id) {
+    $sql = "SELECT description FROM game_sessions WHERE id = :session_id";
+    $query = $this->db->prepare($sql);
+    $parameters = array(':session_id' => $session_id);
 
+    $query->execute($parameters);
 
+    return $query->fetch();
+  }
 
+  public function getGroup($group_id) {
+    $sql = "SELECT name, game_id FROM groups WHERE id = :group_id";
+    $query = $this->db->prepare($sql);
+    $parameters = array(':group_id' => $group_id);
 
+    $query->execute($parameters);
 
+    return $query->fetch();
+  }
+
+  public function getGroupMembers($group_id) {
+    $sql = "SELECT user_id FROM groups g JOIN group_has_users ghu ON g.id = ghu.group_id WHERE group_id = :group_id";
+    $query = $this->db->prepare($sql);
+    $parameters = array(':group_id' => $group_id);
+
+    $query->execute($parameters);
+
+    return $query->fetchAll();
+  }
 
 
 
