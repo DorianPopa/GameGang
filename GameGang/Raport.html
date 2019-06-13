@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="GameGang - Raport">
+        <meta name="keywords" content="HTML,CSS,project,infoiasi,web">
+        <meta name="author" content="Popa Dorian-Mihail,Badarau Bogdan Iosif">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>GameGang - Raport</title>
+    </head>
+
+    <body prefix="schema: http://schema.org">
+        <header>
+            <h1>GameGang</h1>
+            <p class="subtitle">Raport proiect</p>
+        </header>
+
+        <div role="contentinfo">
+            <dl>
+                <dt>Authors</dt>
+                <dd>
+                    Badarau Bogdan Iosif
+                </dd>
+                <dd>
+                    Popa Dorian Mihail
+                </dd>
+            </dl>
+        </div>
+
+        <section typeof="sa:Abstract" id="cerinta" role="cerinta">
+            <section id="cerinta-oficiala">
+                <h2>
+                    <span>1. </span>
+                    Cerinta
+                </h2>
+                <p>
+                    Să se creeze o aplicație Web în care un utilizator poate să își creeze o bibliotecă de jocuri preferate. 
+                    Utilizatorul poate înregistra sesiuni de joc (timpul petrecut pentru finalizarea jocului, cu cine a jucat, care e fost rezultatul etc). 
+                    Utilizatorul va primi sugestii bazate pe tipul de jocuri jucate de acesta, va putea crea un grup cu un alți utilizatori pentru un anumit 
+                    joc și va putea răspunde la întrebări de tip trivia în legătură cu un joc. Un utilizator de tip administrator poate adăuga/aproba/șterge 
+                    jocuri și adăuga/aproba/șterge întrebări. De asemenea, vor exista clasamente  cu cele mai populare (timp petrecut sau număr de sesiuni) 
+                    și "Trivia of the day". Activitatea unui jucător va fi privată grupului de jucători creat sau publică.
+
+                    Bonus: Să se creeze un sistem de premiere prin insigne (badges). Minim trei badge-uri specifice unui joc și două generale.
+                </p>
+            </section>
+
+            <section id="Aspecte-prezente">
+                <h3>
+                    <span>1.1 </span>
+                    Aspecte prezente in proiectul final:
+                </h3>
+                <ul>
+                    <li>
+                        Bibliotecă de jocuri
+                    </li>
+                    <li>
+                        Utilizatorul poate înregistra sesiuni de joc
+                    </li>
+                    <li>
+                        Utilizatorul va putea crea un grup cu un alți utilizatori
+                    </li>
+                    <li>
+                        Un utilizator de tip administrator poate adăuga/șterge jocuri
+                    </li>
+                    <li>
+                        Clasamente cu cele mai populare jocuri
+                    </li>
+                    <li>
+                        Activitatea unui jucător
+                    </li>
+                </ul>
+            </section>
+        
+            <section id="Aspecte-absente">
+                <h3>
+                    <span>1.2 </span>
+                    Aspecte absente in proiectul final:
+                </h3>
+                <ul>
+                    <li>
+                        Sugestii bazate pe tipul de jocuri jucate
+                    </li>
+                    <li>
+                        Posibilitatea de a răspunde la întrebări de tip trivia
+                    </li>
+                    <li>
+                        Sistem de premiere prin insigne (badges)
+                    </li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="motivatie" role="motivatie">
+            <h2>
+                <span>2. </span>
+                Motivatie
+            </h2>
+            <p>
+                Am ales sa implementam acest proiect deoarece suntem pasionati de jocuri video si am considerat ca putem dezvolta o aplicatie 
+                utila atat pentru hobby-ul nostru cat si pentru alti potentiali utilizatori care au nevoie de o librarie de jocuri usor de folosit,
+                in care pot sa isi si inregistreze progresul.
+            </p>
+            <p>
+                De asemenea, am dorit sa ne aprofundam cunostintele de web development, construind un proiect practic care garanteaza abordarea si rezolvarea 
+                unor probleme specifice domeniului intr-o maniera profesionala.
+            </p>
+        </section>
+
+        <section id="structura" role="structura">
+            <h2>
+                <span>3. </span>
+                Structura aplicatiei
+            </h2>
+
+            <section id="arhitectura-aplicatiei">
+                <h3>
+                    <span>3.1 </span>
+                    Arhitectura aplicatiei
+                </h3>
+                <p>
+                    Aplicatia a fost realizata pe baza design pattern-ului MVC (Model–view–controller). Acesta este un pattern utilizat pentru dezvoltarea interfetelor 
+                    si presupune impartirea aplicatiei in 3 parti interconectate. Acest lucru este facut pentru a separa partea de reprezentare a informatiilor si 
+                    partea de prezentare cu care interactioneaza utilizatorul.
+                </p>
+
+                <section id="Model">
+                    <h4>
+                        <span>3.1.1 </span>
+                        Model
+                    </h4>
+                    <p>
+                        Integreaza partea de preluare a datelor din baza de date 
+                    </p>
+                </section>
+
+                <section id="Controller">
+                    <h4>
+                        <span>3.1.2 </span>
+                        Controller
+                    </h4>
+                    <p>
+                        Fiecare pagina a aplicatiei are un controller care prelucreaza datele din model si le pune la dispozitie view-urilor.
+                    </p>
+                    <p>
+                        Controllerele prezente in aplicatie:
+                    </p>
+                    <ul>
+                        <li>
+                            Home - Preia view-ul paginii home si updateaza clasamentul jocurilor 
+                        </li>
+                        <li>
+                            Login - Se ocupa de logarea si inregistrarea utilizatorilor, de criptarea datelor introduse de utilizator si de setarea cookie-urilor
+                        </li>
+                        <li>
+                            Games - Genereaza lista de jocuri paginata si ofera posibilitatea unui utilizator cu drepturile corespunzatoare sa adauge, 
+                            sa editeze si sa stearga jocuri din lista. 
+                        </li>
+                        <li>
+                            Profile - Genereaza profiluri pentru utilizatori, jocuri sau grupuri. Ofera posibilitatea de adaugare a sesiunilor de joc si 
+                            setarea jocurilor favorite.
+                        </li>
+                        <li>
+                            Groups - Gestioneaza functionalitatea de creare a unui grup si de alaturare la un grup deja existent.
+                        </li>
+                        <li>
+                            Problem - Gestioneaza management-ul erorilor care pot aparea in timpul interactiunii cu aplicatia.
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="Model">
+                    <h4>
+                        <span>3.1.3 </span>
+                        View
+                    </h4>
+                    <p>
+                        Genereaza pagini afisate pe ecran
+                    </p>
+                    <p>
+                        Aplicatia contine cate un view pentru fiecare pagina existenta si cateva template-uri pentru generarea unor headere si footere custom.
+                    </p>
+                </section>
+            </section>
+
+            <section id="arhitectura-aplicatiei">
+                <h3>
+                    <span>3.2 </span>
+                    Tehnologii utilizate
+                </h3>
+                <p>
+                    Pentru dezvoltarea proiectului, pe partea de frontend s-au utilizat tehnologiile HTML si CSS, iar pe partea de backend exclusiv PHP.
+                </p>
+            </section>
+        </section>
+
+        <section id="dezvoltarea-proiectului">
+                <h2>
+                    <span>4. </span>
+                    Progresul de dezvoltare al aplicatiei
+                </h2>
+                <p>
+                    Am ales abordarea unei strategii eficiente de dezvoltare a aplicatiei, fiind un proiect de dimensiune mai mare decat cele la care am mai lucrat 
+                    in domeniul web development-ului. 
+                </p>
+                <ol>
+                    <li>
+                        Brainstorming si ingineria cerintei - Perioada in care am interpretat cerinta proiectului si am lamurit majoritatea problemelor legate de aceasta. 
+                        In aceasta perioada, am facut primul mock-up al aplicatiei din punct de vedere estetic. Am sustinut ideea de comunicare intre developeri.
+                    </li>
+                    <li>
+                        Research - Am urmat ghiduri, tutoriale si am citit documentatie, pentru a avea o idee 
+                        cat mai clara despre ce presupune realizarea aplicatiei si eventuale technological spikes.
+                    </li>
+                    <li>
+                        Development, hardcore coding - Perioada de "scriere de cod" in care am realizat majoritatea functionalitatii din cerinta. Un mic time-line al procesului 
+                        ar fi:  login - functionalitate de login, register si securitate;
+                                games - functionalitate pe partea de admin (add/edit/delete);
+                                games - utilizatorul putea sa adauge jocul la favorite;
+                                profile - utilizatorul putea sa isi vada jocurile favorite;
+                                sessions - utilizatorul putea adauga o sesiune de joc;
+                                home - clasamentul cu cele mai jucate jocuri;
+                                profile - utilizatorul putea sa isi vada sesiunile de joc;
+                                groups - utilizatorul putea sa creeze sau sa se alature unui grup;
+                                profile - utilizatorul poate sa vada grupurile din care face parte;
+                                profile - utilizatorul putea sa vada activitatea celorlalti membri din grup.
+                    </li>
+                    <li>
+                        Rafinarea aspectului aplicatiei - Am urmat cat mai fidel posibil mock-upurile concepute in prima etapa a dezvoltarii si am imbunatatit semnificativ 
+                        aspectul aplicatiei.
+                    </li>
+                    <li>
+                        Popularea cu date a tabelelor - Am introdus manual date de test in tabele pentru a testa functionalitatea aplicatiei in conditii de utilizare normala.
+                    </li>
+                    <li>
+                        Verificare - Testare amanuntita a componentelor aplicatiei
+                    </li>
+                    <li>
+                        Validare - Constuirea documentatiei pe baza functionalitatii implementate si verificarea aplicatiei in conformitate cu cerinta initiala (80%).
+                    </li>
+                </ol>
+        </section>
+
+        <section id="concluzie">
+            <h2>
+                <span>5. </span>
+                Concluzie
+            </h2>
+            <p>
+                Implementarea acestui proiect a fost un proces care ne-a ajutat sa ne aprofundam cunostintele de web development si de inginerie a programarii, 
+                incurajandu-ne sa abordam tehnologii noi intr-o maniera structurata si planificata. 
+                Rezultatul este unul in mare parte complet din punctul de vedere al cerintei, o aplicatie functionala si placuta din punct de vedere vizual.
+            </p>
+        </section>
+    </body>
+</html>
