@@ -5,7 +5,7 @@
     <div class="textOverImageBackground">
       <div class="textInside">
         <h1> <?php if($this->isLoggedIn())  echo "Welcome ". $user->username ."!";
-                   else echo "Salut faracontarule!"; ?> </h1>
+                   else echo "Welcome!"; ?> </h1>
         This is a text-box that's transparent and resides over the big picture.
         It contains some text that has no meaningful value and it's there just because the
         devs wanted it to be there.<br>

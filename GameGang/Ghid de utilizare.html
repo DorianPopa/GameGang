@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="GameGang - Ghid de utilizare">
+        <meta name="keywords" content="HTML,CSS,project,infoiasi,web">
+        <meta name="author" content="Popa Dorian-Mihail,Badarau Bogdan Iosif">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>GameGang - Ghid de utilizare</title>
+    </head>
+
+    <body prefix="schema: http://schema.org">
+        <header>
+            <h1>GameGang</h1>
+            <p class="subtitle">Ghid de utilizare</p>
+        </header>
+
+        <div role="contentinfo">
+            <dl>
+                <dt>Authors</dt>
+                <dd>
+                    Badarau Bogdan Iosif
+                </dd>
+                <dd>
+                    Popa Dorian Mihail
+                </dd>
+            </dl>
+        </div>
+
+        <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+        <h2>
+            <span>1. </span>
+            Abstract
+        </h2>
+        <p>
+            GameGang este o aplicație Web în care un utilizator poate să își creeze o bibliotecă de jocuri preferate. 
+            Utilizatorul poate înregistra sesiuni de joc (timpul petrecut in joc, si o scurta descriere a sesiunii de joc).
+            Utilizatorul va putea crea un grup cu un alți utilizatori pentru un anumit joc si va putea vedea sesiunile celorlalti jucatori din grupul respectiv.
+            Un utilizator de tip administrator poate adăuga/șterge jocuri. 
+            De asemenea, aplicatia pune la dispozitia utilizatorului clasamente cu cele mai populare jocuri din punct de vedere al timpului total jucat.
+            Acest document descrie un ghid de utilizare al aplicatiei.
+        </p>
+        </section>
+
+
+        <section id="app-guide" role="doc-app-guide">
+            <h2>
+                <span>2. </span>
+                Flow-ul aplicatiei si continut
+            </h2>
+            <p>
+                In continuare vor fi descrise paginile aplicatiei web si functionalitatea pe care fiecare o pune la dispozitia utilizatorului.
+            </p>
+            <section id="home">
+                <h3>
+                    <span>2.1 </span>
+                    Pagina Home
+                </h3>
+                <p>
+                    Utilizatorul care nu este logat si intra pe pagina principala este intampinat de un mesaj si un clasament al celor mai populare jocuri disponibile pe site.
+                    
+                </p>
+                <p>
+                    Bara de navigare contine functionalitate de baza, acces rapid la pagina de "home", acces la pagina cu lista publica de jocuri si optiunea de login.
+                </p>
+            </section>
+
+            <section id="login-si-register">
+                <h3>
+                    <span>2.2 </span>
+                    Paginile login si register
+                </h3>
+                <p>
+                    Utilizatorul care nu este logat are posibilitatea de a accesa pagina de login, in cazul in care are deja un cont creat pe site sau pagina de register pentru
+                    a creea un cont. Contul pe care il poate gestiona un utilizator este unul de tip "normal", cele de tip "admin" vor fi gestionate doar de dezvoltatorii site-ului. 
+                    In momentul in care utilizatorul completeaza complet formularul de inregistrare, va fi redirectionat catre pagina de login pentru a accesa contul creat.
+                </p>
+            </section>
+
+            <section id="utilizatorul-conectat">
+                <h3>
+                    <span>2.3 </span>
+                    Optiunile utilizatorului conectat
+                </h3>
+                <p>
+                    Utilizatorul conectat cu un cont "normal" este redirectionat la pagina principala dupa login si poate observa optiuni aditionale pe bara de navigare.
+                    Acesta are acces la pagina de profil, pagina de grupuri, si pagina de sesiuni de joc. De asemenea, butonul de "Logout" este disponibil in momentul logarii.
+                    Utilizatorul conectat poate parasi aplicatia fara a folosi optiunea de "Logout", dar sesiunea acestuia va ramane intr-un cookie valabil 7 zile.
+                </p>
+            </section>
+
+            <section id="profil">
+                <h3>
+                    <span>2.4 </span>
+                    Pagina de profil
+                </h3>
+                <p>
+                    Pagina de profil contine informatii despre contul cu care utilizatorul este conectat precum jocurile adaugate la lista de favorite, ultimele 3 sesiuni de joc
+                    si lista de grupuri in care este.
+                </p>
+            </section>
+
+            <section id="sesiuni">
+                <h3>
+                    <span>2.5 </span>
+                    Pagina pentru sesiuni
+                </h3>
+                <p>
+                    Pagina de sesiuni contine un formular pentru adaugarea unei noi sesiuni de joc, 
+                    precum si un tabel in care utilizatorul isi poate vedea sesiunile inregistrate anterior.
+                </p>
+            </section>
+
+            <section id="grupuri">
+                <h3>
+                    <span>2.6 </span>
+                    Pagina de grupuri
+                </h3>
+                <p>
+                    Pagina de grupuri contine un formular pentru a creea un grup nou, precum si un tabel in care utilizatorul poate vedea toate grupurile existente pe site.
+                    Grupurile sunt specifice unui joc, titlul acestuia fiind necesar la initializare.
+                </p>
+                <p>
+                    Lista de grupuri este interactiva, utilizatorul poate da click pe numele unui anumit grup pentru a vedea profilul acestuia sau actiona butonul Join pentru 
+                    a se alatura grupului selectat.
+                </p>
+                <p>
+                    Pagina de profil a unui grup contine o lista cu membrii acestuia si cu sesiunile de joc inregistrate de acestia.
+                </p>
+            </section>
+
+            <section id="games">
+                <h3>
+                    <span>2.7 </span>
+                    Pagina Games
+                </h3>
+                <p>
+                    Aceasta este o pagina care poate fi accesata chiar daca utilizatorul nu este logat pe un cont si cuprinde o lista paginata a jocurilor existente pe site.
+                    Fiecare joc are asociat urmatoarele campuri:
+                </p>
+                <ul>
+                    <li>
+                        Thumbnail
+                    </li>
+                    <li>
+                        Titlu
+                    </li>
+                    <li>
+                        O descriere scurta
+                    </li>
+                    <li>
+                        Numele producatorului
+                    </li>
+                </ul>
+                <p>
+                    Un utilizator de tip "admin" are la dispozitie doua butoane suplimentare asociate fiecarui titlu din lista:
+                </p>
+                <ul>
+                    <li>
+                        Edit, redirectioneaza utilizatorul catre o pagina in care poate modifica campurile unui joc din lista
+                    </li>
+                    <li>
+                        Delete, sterge definitiv jocul din lista
+                    </li>
+                </ul>
+            </section>
+
+            <section id="profil-joc">
+                <h3>
+                    <span>2.8 </span>
+                    Pagina de profil a unui joc
+                </h3>
+                <p>
+                    Aceasta este pagina caracteristica fiecarui joc inregistrat pe site si contine descrierea unui joc, respectiv un clasament cu 
+                    primii 3 utilizatori in functie de timpul total in care au jucat jocul. Acest timp total este calculat insumand timpii sesiunilor 
+                    inregistrate de utilizator pentru acel joc.
+                </p>
+            </section>
+
+            <section id="adauga-joc">
+                    <h3>
+                        <span>2.9 </span>
+                        Pagina de adaugare a unui joc
+                    </h3>
+                    <p>
+                        Aceasta pagina este disponibila numai utilizatorilor de tip administrator si este folosita pentru adaugarea jocurilor in aplicatie.
+                    </p>
+                    <p>
+                        Pagina contine un formular pentru completarea campurilor specifice unui joc si un buton "Add game" care valideaza formularul 
+                        completat de catre utilizator si adauga jocul in aplicatie.
+                    </p>
+                </section>
+        </section>
+
+    </body>
+</html>
