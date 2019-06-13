@@ -8,6 +8,7 @@ class Profile extends Controller {
           $user = $this->model->getUser($user_id);
           $favorite_games = $this->model->getFavoriteGames($user_id);
           $recent_sessions = $this->model->getRecentSessions($user_id);
+          $groups = $this->model->getGroupsOfUser($user_id);
 
           require APP . 'view/_templates/header.php';
           require APP . 'view/profile/user.php';
@@ -98,5 +99,7 @@ class Profile extends Controller {
       require APP . 'view/_templates/footer.php';
     }
   }
+
+
 }
 

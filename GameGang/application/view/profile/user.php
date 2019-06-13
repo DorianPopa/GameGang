@@ -34,8 +34,18 @@
         </ul>
       </div>
     </div>
-
-
+    <div class="myGroups">
+    <h2>My Groups:</h2>
+    <div class="groups">
+      <ul class="myGroupsList">
+        <?php foreach($groups as $group) { ?>
+          <li>
+            <?php echo $group->name; ?> - a group of <?php echo $this->model->getGame($group->game_id)->title; ?> players;
+          </li>
+        <?php }  ?>
+      </ul>
+    </div>
+  </div>
   </div>
 
 </div>
